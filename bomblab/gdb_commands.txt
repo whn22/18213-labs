@@ -1,0 +1,17 @@
+break explode_bomb
+break phase_6
+break read_six_numbers
+x/12gx $rsp
+run my_answers.txt
+where
+x /s
+watch $rax
+watch $rbx
+watch $rbp
+watch $ecx
+watch $rdx
+watch $rcx
+watch $rbx if $rbx == 6
+watch $rbp if $rbp == 0
+watch $rcx if $rcx == 0
+watch $rcx if $rcx == 6
