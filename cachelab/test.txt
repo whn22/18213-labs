@@ -1,0 +1,29 @@
+    for(size_t i = 0; i < N; i += 8) {
+        for(size_t j = 0; j < M; j += 8) {
+                size_t di = i % 8;
+                size_t dj = j % 8;
+                tmp[8 * di + dj] = A[di][dj];
+                B[j][i] = tmp[2 * di + dj];
+
+                size_t dk = k % 8;
+                size_t index = dk;
+
+                tmp[index] = A[k][j];
+                tmp[index+1] = A[k][j+1];
+                tmp[index+2] = A[k][j+2];
+                tmp[index+3] = A[k][j+3];
+                tmp[index+4] = A[k][j+4];
+                tmp[index+5] = A[k][j+5];
+                tmp[index+6] = A[k][j+6];
+                tmp[index+7] = A[k][j+7];
+
+                B[j][k] = tmp[index];
+                B[j+1][k] = tmp[index+1];
+                B[j+2][k] = tmp[index+2];
+                B[j+3][k] = tmp[index+3];
+                B[j+4][k] = tmp[index+4];
+                B[j+5][k] = tmp[index+5];
+                B[j+6][k] = tmp[index+6];
+                B[j+7][k] = tmp[index+7];
+        }
+    }
