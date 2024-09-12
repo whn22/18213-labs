@@ -1,0 +1,6 @@
+
+    for (list_ele_t *curr = q->head; curr != NULL; curr = curr->next) {
+        free(curr->value);
+    }
+    newh->value = malloc(sizeof(const char));
+    if (newh->value == NULL) return false;
